@@ -1,0 +1,109 @@
+<div [ngStyle]="{'background':'url(.././assets/download.jpeg)',
+'width':'100%',
+'height':'95rem',
+'border-radius':'12px','background-repeat':'no-repeat',
+'background-size': '100rem 100rem'
+}">
+  <div
+    [ngStyle]="{'margin':' auto','background':'radial-gradient(circle, rgb(136 139 152) 0%, rgb(154, 82, 182) 5%, rgb(102 91 136) 21%, rgb(118 100 131) 61%, rgb(199, 77, 148) 79%, rgb(141 99 108) 100%)','position': 'relative','top': '5rem','width':'55%','height':'auto','text-align':'center','border-radius':'12px','box-shadow': 'rgb(137 98 144) 5px 3px 5px'}">
+    <label [ngStyle]="{'font-size':'2rem','color':'white','font-style':'bold','font-family':'Pacifico'}">S<span
+        [ngStyle]="{'color':'#A0DAA9'}">P</span>OR<span [ngStyle]="{'color':'white'}">T</span>S &nbsp; <span
+        [ngStyle]="{'color':'#F5DF4D','font-family':'Pacifico'}">REG</span>IST<span
+        [ngStyle]="{'color':'#34568B'}">RA</span>TION &nbsp; FO<span [ngStyle]="{'color':'#9BB7D4'}">RM</span></label>
+    <div [ngStyle]="{'text-align':'left','margin-left':'1.3rem','color':'white','font-family':'Dancing Script'}"><br><br>
+      <h5>Name of Sports Organization</h5>
+      <h5>Name of Team</h5>
+      <h5>Season/Year</h5>
+    </div>
+    <div [ngStyle]="{'color':'white'}">
+      <p>If you have any questions, please contact team manager Mr. Team Manager at 7189-560-220 or arsports@sports.com
+      </p>
+    </div>
+    <hr>
+<h2 *ngIf="sub" [ngClass]="{'alert':true,'alert-warning':true}">Form Submit Successfully</h2>
+    <form [ngStyle]="{'position': 'relative','top': '1rem','width':'30rem','margin':'auto','color':'white'}"
+      #frm="ngForm" (ngSubmit)="submit(frm)">
+
+      <span> Name*</span> <input [type]='txt' [ngClass]="{'form-control':true}" required ngModel name="formval"
+        #formval="ngModel" (change)="changeV1(formval)" type="text" id="id1" minlength="5"
+        maxlength="25" placeholder="Enter full name"><br>
+      <p class="alert alert-danger" *ngIf="formval.touched && !formval.valid ">
+        There is somthing wrong with the textbox .....
+      </p>
+
+      <span>Email*</span><input [ngClass]="{'form-control':true}" placeholder="Enter email.." required ngModel
+        name="formval2" #formval2="ngModel" (change)="changeV2(formval2)" type="email" id="id2"
+        minlength="6" maxlength="25"><br>
+      <p class="alert alert-danger" *ngIf="formval2.touched && !formval2.valid">
+        There is somthing wrong with the textbox .....
+      </p>
+
+      <span>Birth Date*</span><br>
+      <input [ngClass]="{'form-control':true}" placeholder="Enter email.." required type="date" id="id3"
+        class="form-control"><br>
+
+      <span> Contact Number*</span><input [ngClass]="{'form-control':true}" type="number"
+        placeholder="Enter mobile number" required ngModel name="V1" #V1="ngModel" (change)="changeV1(V1)"
+        id="id1" minlength="6" maxlength="16"><br>
+      <p class="alert alert-danger" *ngIf="V1.touched && !V1.valid">
+        There is somthing wrong with the textbox .....
+      </p>
+
+      <span> Address*</span><textarea [ngClass]="{'form-control':true}" cols="10" rows="8"
+        placeholder="Enter Your Address" required ngModel name="FormAdd" #FormAdd="ngModel" (change)="changeV3(FormAdd)"
+        type="text" id="id1"  minlength="10" maxlength="25"></textarea><br>
+      <p class="alert alert-danger" *ngIf="FormAdd.touched && !FormAdd.valid">
+        There is somthing wrong with the textbox .....
+      </p>
+
+      <div [ngStyle]="{'text-align': 'left'}" class="form-control">
+        <label>Gender*</label><br><br>
+        <span>Male </span><input  [ngClass]="{'form-check-input':true}" type="radio" name="ml">&nbsp;
+        <span>FeMale </span><input [ngClass]="{'form-check-input':true}" type="radio" name="ml">&nbsp;<br><br>
+      </div><br><br>
+      <div [ngStyle]="{'text-align': 'left'} " class="form-control">
+        <label>Interest In*</label><br><br>
+        <span>Cricket </span><input [ngClass]="{'form-check-input':true}" type="radio" name="practice">&nbsp;
+        <span>Football </span><input [ngClass]="{'form-check-input':true}" type="radio" name="practice">&nbsp;
+        <span>Volleyball </span><input [ngClass]="{'form-check-input':true}" type="radio" name="practice">&nbsp;
+        <span>Badminton </span><input [ngClass]="{'form-check-input':true}" type="radio" name="practice"><br><br>
+      </div><br>
+
+
+      <span> Height*</span><input [ngClass]="{'form-control':true}" type="number"
+        placeholder="Enter mobile number" required ngModel name="V1" #V1="ngModel" (change)="changeV1(V1)"
+        id="id1" minlength="1" maxlength="2"><br>
+      <p class="alert alert-danger" *ngIf="V1.touched && !V1.valid">
+        There is somthing wrong with the textbox .....
+      </p>
+
+
+      <span> Weight*</span><input [ngClass]="{'form-control':true}" type="number"
+        placeholder="Enter mobile number" required ngModel name="V8" #V8="ngModel" (change)="changeV1(V8)"
+        id="id1"  minlength="1" maxlength="3"><br>
+      <p class="alert alert-danger" *ngIf="V8.touched && !V8.valid">
+        There is somthing wrong with the textbox .....
+      </p><br>
+
+      <span> Terms and conditions*</span><input
+      placeholder="Enter mobile number" required ngModel name="V9" #V9="ngModel" (change)="changeV1(V9)" type="checkbox"
+      id="id1"  minlength="1" maxlength="3"><br>
+    <p class="alert alert-danger" *ngIf="V9.touched && !V9.valid">
+      There is somthing wrong with the Terms and conditions .....
+    </p><br><br>
+
+
+      <div [ngStyle]="{'position':'relative','bottom':'1rem'}">
+        <button type="submit" [ngClass]="{'btn':true, 'text-center':true,'btn-success':true}"
+          [ngStyle]="{'position':'relative','right':'10px'}" [disabled]="!frm.valid" (click)="submitted()">
+          SUBMIT
+        </button>
+
+        <button (click)="res()" type="reset"
+          [ngClass]="{'btn':true,'text-center':true,'btn-danger':true}">RESET</button><br><br>
+          <hr>
+      </div>
+
+    </form>
+  </div>
+</div>
